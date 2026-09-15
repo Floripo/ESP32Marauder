@@ -430,7 +430,12 @@ void CommandLine::runCommand(String input) {
   if (input == "") return;
 
   // OTA must be available even while a scan is active.
-  if (input == "ota") {
+  if (input == "webui") {
+  Serial.println("#" + input);
+  webui_obj.start();
+  return;
+  }
+	if (input == "ota") {
     Serial.println("#" + input);
     startMarauderOTA();
     return;
@@ -453,6 +458,7 @@ void CommandLine::runCommand(String input) {
     Serial.println(HELP_CLEARAP_CMD_A);
     Serial.println(HELP_REBOOT_CMD);
     Serial.println(HELP_UPDATE_CMD_A);
+	Serial.println(F("webui - Start Marauder WebUI"));
     Serial.println(F("ota - Start OTA firmware update"));
     Serial.println(HELP_LS_CMD);
     // GCOVR_EXCL_START -- hardware-only command help entry.
