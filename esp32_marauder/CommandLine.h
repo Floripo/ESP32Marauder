@@ -11,6 +11,7 @@
 #endif 
 
 #include "WiFiScan.h"
+#include "WebUI.h"
 //#include "Web.h"
 #ifdef HAS_SD
   #include "SDInterface.h"
@@ -27,6 +28,7 @@
 #endif
 
 extern WiFiScan wifi_scan_obj;
+extern WebUI webui_obj;
 //extern Web web_obj;
 #ifdef HAS_SD
   extern SDInterface sd_obj;
